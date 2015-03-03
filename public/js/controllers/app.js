@@ -13,9 +13,9 @@ appCtrs.controller('AppCtrl', ['$scope', '$http',
     $scope[page+'Active'] = 'active';
   };
 
-  $scope.setMainMenu = function(set){
-    $scope.menuActive = set;
-  };
+  $scope.displayMainNavigation = function(b){
+    $scope.menuActive = b;
+  }
 
   $http.get('res/config.json').success(function(data) {
   	$scope.config = data;
@@ -27,7 +27,8 @@ appCtrs.controller('HomeCtrl', ['$scope', '$http',
   function($scope, $http) {
   	// main navigation - set home tab active
   	$scope.setActive('home');
-    $scope.setMainMenu('hide');
+    // setting the main menu hidden
+    $scope.displayMainNavigation(false);
 }]);
 
 
@@ -35,5 +36,6 @@ appCtrs.controller('ErrorCtrl', ['$scope', '$http',
   	function($scope, $http) {
   		// main navigation - set error tab active
   		$scope.setActive('error');
-      $scope.setMainMenu('show');
+      // displaying the main menu 
+      $scope.displayMainNavigation(true);
 }]);

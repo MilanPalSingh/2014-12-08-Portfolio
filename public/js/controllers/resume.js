@@ -7,7 +7,7 @@ resumeCtrs.controller('ResumeBuildCtrl', ['$scope', '$http',
   	function($scope, $http) {
   		// main navigation - set resume tab active
   		$scope.setActive('resume');
-    	$scope.setMainMenu('show');
+		$scope.displayMainNavigation(true);
 
   		$scope.resume = [];
   		
